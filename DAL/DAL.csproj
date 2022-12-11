@@ -31,10 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="iTools">
       <HintPath>..\..\iTools\iTools\bin\Debug\iTools.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -46,13 +53,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Armoire.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Article_CodeBarre.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Article_Info.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Article_Photo.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Article_Reference.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BL.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BL_Article.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emplacement.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Famille.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fournisseur.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="g_Stock.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>g_Stock.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="g_Stock.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="g_Stock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>g_Stock.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Magasin.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mouvement.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profil.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rayonnage.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unite.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unite_Mesure.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unite_Type.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilisateur.cs">
+      <DependentUpon>g_Stock.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <EntityDeploy Include="g_Stock.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>g_Stock.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="g_Stock.edmx.diagram">
+      <DependentUpon>g_Stock.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="g_Stock.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>g_Stock.edmx</DependentUpon>
+      <LastGenOutput>g_Stock.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="g_Stock.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>g_Stock.edmx</DependentUpon>
+      <LastGenOutput>g_Stock.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
